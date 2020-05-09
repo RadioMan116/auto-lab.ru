@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqIvJib6xiOXUcwBr-Bj6Gkey41mXY7ss&callback=initMap&language=ru-RU"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.vide.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body class="calculatePage">
+<div id="site">
+    <div class="menu__top">
+        <ul class="footer__nav-list">
+            <li class="footer__nav-item"><a href="/o-kompanii/">О компании</a></li>
+            <li class="footer__nav-item"><a href="/tseny/">Цены</a></li>
+            <li class="footer__nav-item"><a href="/garantii/">Гарантии</a></li>
+            <li class="footer__nav-item"><a href="/otzyvy/">Отзывы</a></li>
+            <li class="footer__nav-item"><a href="/blog/">Блог</a></li>
+            <li class="footer__nav-item"><a href="/kontakty/">Контакты</a></li>
+        </ul>
+
+        <div class="header__contacts">
+            <div class="header__contacts_phone"><a href="tel:+78004443001">+7 800 <span> 444 3 001</span></a></div>
+            <div class="header__contacts_time">Пн.-Вс. 10:00-22:00</div>
+        </div>
+    </div>
+
+
+    <div class="slider__home">
+        <div class="slider__home_items">
+            <div class="slider__home_item slide__1 active">
+                <div class="bottom__blink"></div>
+                <div class="container active">
+                    <div class="slider__home__items active " data-slide-id="slide__1">
+                        <div class="slider__home_item_text slider_center">
+                            <div class="main__block">
+
+                                <div class="body_img"></div>
+                                <div class="content__inner">
+                                  
+                                  <a class="logo" href="/">
+                                      <img src="img/logo_new.png" alt="">
+                                  </a>
+                                  
+                                  <div class="h1__block container__inner">
+                                    <h1>Калькулятор подбора</h1>
+                                </div>
+                                
+                                  <div class="filters">
+                                    
+                                    <div class="filter__group-wrapp">
+                                      <div class="filter__group-inputs"><span class="filter__title">
+														Цена, Р													</span>    <div class="filter__border js-border-three"><div class="filter__input-wrapp js-wrapp-color filter__input-wrapp--min" data-text="от"><input onkeypress="validateInt(event)" type="text" placeholder="0" name="minMo" class="filter__input filter__input--min js-filter-three"></div><div class="filter__input-wrapp js-wrapp-color filter__input-wrapp--max" data-text="до"><input onkeypress="validateInt(event)" type="text" placeholder="9 800 000" name="maxMo" class="filter__input filter__input--max js-filter-three"></div></div></div><div class="filter__group-inputs"><span class="filter__title">
+														Год авто												</span><div class="filter__border js-border-two"><div class="filter__input-wrapp js-wrapp-color filter__input-wrapp--min" data-text="от"><input onkeypress="validateInt(event)" type="text" name="minOb" placeholder="0.9 л." class="filter__input filter__input--min js-filter-two"></div><div class="filter__input-wrapp js-wrapp-color filter__input-wrapp--max" data-text="до"><input onkeypress="validateInt(event)" type="text" name="maxOb" placeholder="6.3" class="filter__input filter__input--max js-filter-two"></div></div></div>
+                            
+                            <div class="filter__group-inputs"><span class="filter__title">
+														Пробег, км										</span><div class="filter__border js-border-two"><div class="filter__input-wrapp js-wrapp-color filter__input-wrapp--min" data-text="от"><input onkeypress="validateInt(event)" type="text" name="minOb" placeholder="0.9 л." class="filter__input filter__input--min js-filter-two"></div><div class="filter__input-wrapp js-wrapp-color filter__input-wrapp--max" data-text="до"><input onkeypress="validateInt(event)" type="text" name="maxOb" placeholder="6.3" class="filter__input filter__input--max js-filter-two"></div></div></div></div>
+                            
+                            
+                            
+                            <div class="filter__group-wrapp">
+                              <div class="filter__group-inputs"><span class="filter__title">
+                    Мощность													</span>    <div class="filter__border js-border-three"><div class="filter__input-wrapp js-wrapp-color filter__input-wrapp--min" data-text="от"><input onkeypress="validateInt(event)" type="text" placeholder="115" name="minMo" class="filter__input filter__input--min js-filter-three"></div><div class="filter__input-wrapp js-wrapp-color filter__input-wrapp--max" data-text="до"><input onkeypress="validateInt(event)" type="text" placeholder="86 л.с." name="maxMo" class="filter__input filter__input--max js-filter-three"></div></div></div><div class="filter__group-inputs"><span class="filter__title">
+                    Объём двигателя													</span><div class="filter__border js-border-two"><div class="filter__input-wrapp js-wrapp-color filter__input-wrapp--min" data-text="от"><input onkeypress="validateInt(event)" type="text" name="minOb" placeholder="0.9 л." class="filter__input filter__input--min js-filter-two"></div><div class="filter__input-wrapp js-wrapp-color filter__input-wrapp--max" data-text="до"><input onkeypress="validateInt(event)" type="text" name="maxOb" placeholder="6.3" class="filter__input filter__input--max js-filter-two"></div></div></div>
+                    
+                    </div>
+                              
+                                    
+                                    
+                                    <div class="filters__title">Тип кузова</div>
+                                    <ul class="filter__list clearfix"><li class="filter__item"><input type="checkbox" checked name="PROPS[]" value="PROPERTY_TYPE/Внедорожник 5 дв." id="PROPERTY_TYPE_122"><label for="PROPERTY_TYPE_122">
+															Внедорожник 5 дв.														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/купе" id="PROPERTY_TYPE_123"><label for="PROPERTY_TYPE_123">
+															купе														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Седан 2 дв." id="PROPERTY_TYPE_125"><label for="PROPERTY_TYPE_125">
+															Седан 2 дв.														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Лифтбек" id="PROPERTY_TYPE_718"><label for="PROPERTY_TYPE_718">
+															Лифтбек														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Седан" id="PROPERTY_TYPE_716"><label for="PROPERTY_TYPE_716">
+															Седан														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Туризм" id="PROPERTY_TYPE_131"><label for="PROPERTY_TYPE_131">
+															Туризм														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Купе" id="PROPERTY_TYPE_695"><label for="PROPERTY_TYPE_695">
+															Купе														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Внедорожник" id="PROPERTY_TYPE_700"><label for="PROPERTY_TYPE_700">
+															Внедорожник														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Универсал" id="PROPERTY_TYPE_484"><label for="PROPERTY_TYPE_484">
+															Универсал														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Микроавтобус" id="PROPERTY_TYPE_621"><label for="PROPERTY_TYPE_621">
+															Микроавтобус														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Хэтчбек" id="PROPERTY_TYPE_612"><label for="PROPERTY_TYPE_612">
+															Хэтчбек														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Пикап" id="PROPERTY_TYPE_597"><label for="PROPERTY_TYPE_597">
+															Пикап														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/внедорожник" id="PROPERTY_TYPE_623"><label for="PROPERTY_TYPE_623">
+															внедорожник														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Хетчбэк" id="PROPERTY_TYPE_660"><label for="PROPERTY_TYPE_660">
+															Хетчбэк														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/седан" id="PROPERTY_TYPE_710"><label for="PROPERTY_TYPE_710">
+															седан														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Внеорожник" id="PROPERTY_TYPE_644"><label for="PROPERTY_TYPE_644">
+															Внеорожник														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Минивэн" id="PROPERTY_TYPE_663"><label for="PROPERTY_TYPE_663">
+															Минивэн														</label></li><li class="filter__item"><input type="checkbox" name="PROPS[]" value="PROPERTY_TYPE/Хэтчбэк" id="PROPERTY_TYPE_672"><label for="PROPERTY_TYPE_672">
+															Хэтчбэк														</label></li></ul>
+                                  </div>
+                                  
+                                  <div class="doverie__block_buttons full_btns clearfix">
+                                      <a class="btn" href="#">Показать ещё фильтры</a>
+                                      <a class="btn red" href="#">Подобрать авто</a>
+                                  </div>
+
+                                    <div class="h2__block search_h2__block">
+                                        <h2>Результаты поиска</h2>
+                                        <div class="h2__block_text">Подобрано 115 шт.</div>
+                                    </div>
+                                  
+
+                                    <div class="blog__block blog__block_part search__block clearfix">
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="clearfix">
+                                                    <div class="blog__title">Краткий заголовок</div>
+                                                    <div class="blog__data">08.06.2018</div>
+                                                </div>
+                                                <div class="blog__props_list">
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Год</div>
+                                                    <div class="blog__props_item_right">2018</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Пробег</div>
+                                                    <div class="blog__props_item_right">5000</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Двигатель</div>
+                                                    <div class="blog__props_item_right">Бензиновый</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">КПП</div>
+                                                    <div class="blog__props_item_right">Автоматическая</div>
+                                                  </div>
+                                                  <div class="podrobnee">
+                                                    <a href="#">Подробнее</a>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="clearfix">
+                                                    <div class="blog__title">Краткий заголовок</div>
+                                                    <div class="blog__data">08.06.2018</div>
+                                                </div>
+                                                <div class="blog__props_list">
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Год</div>
+                                                    <div class="blog__props_item_right">2018</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Пробег</div>
+                                                    <div class="blog__props_item_right">5000</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Двигатель</div>
+                                                    <div class="blog__props_item_right">Бензиновый</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">КПП</div>
+                                                    <div class="blog__props_item_right">Автоматическая</div>
+                                                  </div>
+                                                  <div class="podrobnee">
+                                                    <a href="#">Подробнее</a>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="clearfix">
+                                                    <div class="blog__title">Краткий заголовок</div>
+                                                    <div class="blog__data">08.06.2018</div>
+                                                </div>
+                                                <div class="blog__props_list">
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Год</div>
+                                                    <div class="blog__props_item_right">2018</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Пробег</div>
+                                                    <div class="blog__props_item_right">5000</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Двигатель</div>
+                                                    <div class="blog__props_item_right">Бензиновый</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">КПП</div>
+                                                    <div class="blog__props_item_right">Автоматическая</div>
+                                                  </div>
+                                                  <div class="podrobnee">
+                                                    <a href="#">Подробнее</a>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+                                        
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="clearfix">
+                                                    <div class="blog__title">Краткий заголовок</div>
+                                                    <div class="blog__data">08.06.2018</div>
+                                                </div>
+                                                <div class="blog__props_list">
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Год</div>
+                                                    <div class="blog__props_item_right">2018</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Пробег</div>
+                                                    <div class="blog__props_item_right">5000</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Двигатель</div>
+                                                    <div class="blog__props_item_right">Бензиновый</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">КПП</div>
+                                                    <div class="blog__props_item_right">Автоматическая</div>
+                                                  </div>
+                                                  <div class="podrobnee">
+                                                    <a href="#">Подробнее</a>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+                                        
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="clearfix">
+                                                    <div class="blog__title">Краткий заголовок</div>
+                                                    <div class="blog__data">08.06.2018</div>
+                                                </div>
+                                                <div class="blog__props_list">
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Год</div>
+                                                    <div class="blog__props_item_right">2018</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Пробег</div>
+                                                    <div class="blog__props_item_right">5000</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Двигатель</div>
+                                                    <div class="blog__props_item_right">Бензиновый</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">КПП</div>
+                                                    <div class="blog__props_item_right">Автоматическая</div>
+                                                  </div>
+                                                  <div class="podrobnee">
+                                                    <a href="#">Подробнее</a>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+                                        
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="clearfix">
+                                                    <div class="blog__title">Краткий заголовок</div>
+                                                    <div class="blog__data">08.06.2018</div>
+                                                </div>
+                                                <div class="blog__props_list">
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Год</div>
+                                                    <div class="blog__props_item_right">2018</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Пробег</div>
+                                                    <div class="blog__props_item_right">5000</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Двигатель</div>
+                                                    <div class="blog__props_item_right">Бензиновый</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">КПП</div>
+                                                    <div class="blog__props_item_right">Автоматическая</div>
+                                                  </div>
+                                                  <div class="podrobnee">
+                                                    <a href="#">Подробнее</a>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+                                        
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="clearfix">
+                                                    <div class="blog__title">Краткий заголовок</div>
+                                                    <div class="blog__data">08.06.2018</div>
+                                                </div>
+                                                <div class="blog__props_list">
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Год</div>
+                                                    <div class="blog__props_item_right">2018</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Пробег</div>
+                                                    <div class="blog__props_item_right">5000</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Двигатель</div>
+                                                    <div class="blog__props_item_right">Бензиновый</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">КПП</div>
+                                                    <div class="blog__props_item_right">Автоматическая</div>
+                                                  </div>
+                                                  <div class="podrobnee">
+                                                    <a href="#">Подробнее</a>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+                                        
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="clearfix">
+                                                    <div class="blog__title">Краткий заголовок</div>
+                                                    <div class="blog__data">08.06.2018</div>
+                                                </div>
+                                                <div class="blog__props_list">
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Год</div>
+                                                    <div class="blog__props_item_right">2018</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Пробег</div>
+                                                    <div class="blog__props_item_right">5000</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Двигатель</div>
+                                                    <div class="blog__props_item_right">Бензиновый</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">КПП</div>
+                                                    <div class="blog__props_item_right">Автоматическая</div>
+                                                  </div>
+                                                  <div class="podrobnee">
+                                                    <a href="#">Подробнее</a>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+                                        
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="clearfix">
+                                                    <div class="blog__title">Краткий заголовок</div>
+                                                    <div class="blog__data">08.06.2018</div>
+                                                </div>
+                                                <div class="blog__props_list">
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Год</div>
+                                                    <div class="blog__props_item_right">2018</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Пробег</div>
+                                                    <div class="blog__props_item_right">5000</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">Двигатель</div>
+                                                    <div class="blog__props_item_right">Бензиновый</div>
+                                                  </div>
+                                                  
+                                                  <div class="blog__props_item clearfix">
+                                                    <div class="blog__props_item_left">КПП</div>
+                                                    <div class="blog__props_item_right">Автоматическая</div>
+                                                  </div>
+                                                  
+                                                  <div class="podrobnee">
+                                                    <a href="#">Подробнее</a>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+                                        
+                                    </div><!-- отзывы -->
+                                    
+                                    
+                                    <div class="show_next">
+                                      <a class="btn" href="#">Показать еще</a>
+                                    </div>
+
+
+                                    <div class="h2__block">
+                                        <h2>Отзывы</h2>
+                                        <div class="h2__block_text">Средняя оценка услуги - 4,9 из 5</div>
+                                    </div>
+
+                                    <div class="blog__block open blog__block_part clearfix">
+                                      <div class="blog__item">
+                                          <div class="blog__img">
+                                              <a href="#">
+                                                  <img src="img/blog.jpg" alt="">
+                                              </a>
+                                          </div>
+                                          <div class="blog__description">
+                                              <div class="blog__description_inner">
+                                                  <div class="clearfix">
+                                                      <div class="blog__title">Краткий заголовок</div>
+                                                      <div class="blog__data">08.06.2018</div>
+                                                  </div>
+                                                  <div class="blog__text">Огромная, мощная, быстрая. Что еще еще .. </div>
+                                                  <div class="blog__text_big">
+                                                      Огромная, мощная, быстрая. Что еще еще от машины нужно?! Спасибо друзья за хорошую машину и настроение, которое вы мне подарили..
+                                                  </div>
+                                              </div>
+                                              <div class="blog__text_btn">
+                                                  <a class="btn" href="#">Заказать</a>
+                                              </div>
+                                          </div>
+                                      </div><!--item-->
+
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="blog__description_inner">
+                                                    <div class="clearfix">
+                                                        <div class="blog__title">Краткий заголовок</div>
+                                                        <div class="blog__data">08.06.2018</div>
+                                                    </div>
+                                                    <div class="blog__text">Огромная, мощная, быстрая. Что еще еще .. </div>
+                                                    <div class="blog__text_big">
+                                                        Огромная, мощная, быстрая. Что еще еще от машины нужно?! Спасибо друзья за хорошую машину и настроение, которое вы мне подарили..
+                                                    </div>
+                                                </div>
+                                                <div class="blog__text_btn">
+                                                    <a class="btn" href="#">Заказать</a>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+
+                                        <div class="blog__item">
+                                            <div class="blog__img">
+                                                <a href="#">
+                                                    <img src="img/blog.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="blog__description">
+                                                <div class="blog__description_inner">
+                                                    <div class="clearfix">
+                                                        <div class="blog__title">Краткий заголовок</div>
+                                                        <div class="blog__data">08.06.2018</div>
+                                                    </div>
+                                                    <div class="blog__text">Огромная, мощная, быстрая. Что еще еще .. </div>
+                                                    <div class="blog__text_big">
+                                                        Огромная, мощная, быстрая. Что еще еще от машины нужно?! Спасибо друзья за хорошую машину и настроение, которое вы мне подарили..
+                                                    </div>
+                                                </div>
+                                                <div class="blog__text_btn">
+                                                    <a class="btn" href="#">Заказать</a>
+                                                </div>
+                                            </div>
+                                        </div><!--item-->
+                                    </div><!-- отзывы -->
+                                    
+
+                                </div>
+                                
+                                <div class="full_btns clearfix full_btns_border full_btns_review">
+                                    <a class="btn hide__mobile" href="#">Задать вопрос онлайн</a>
+                                    <a class="btn hide__www show__mobile" href="#">Задать вопрос</a>
+                                    <a class="btn red hide__mobile" href="#">Получить бесплатную консультацию</a>
+                                    <a class="btn red hide__www show__mobile" href="#">Консультация</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div><!-- item1-->
+                    <!-- item2-->
+
+
+                    <div class="slider__social"><a target="_blank" class="slider__social_vk"
+                                                   href="https://instagram.com/alexeynosikhin001?utm_source=ig_profile_share&amp;igshid=1jl4ly3ew2ny0">instagram</a><a
+                            target="_blank" class="slider__social_vk" href="https://vk.com/autolab001">vk</a><a
+                            target="_blank" class="slider__social_vk" href="https://ru-ru.facebook.com">facebook</a>
+                    </div>
+                    <div class="sliders_btns">
+                        <div class="sliders_btns_prev"></div>
+                        <div class="sliders_btns_next"></div>
+                    </div>
+                    <div class="menu_top"></div>
+
+
+                    <div class="faq_btn">Есть вопросы?</div>
+                </div>
+            </div><!-- slider item --></div>
+    </div>
+
+
+
+</div>
+</body>
+</html>
