@@ -1,9 +1,11 @@
 // проверка email
 function isEmail(email) {
-    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex.test(email);
 }
-    
+
+
+
 $(document).ready(function () {
     if($('.more__services').length && !$('.services__blog .load_more').length  ) {
         $('.more__services').addClass('no__more');
@@ -12,14 +14,14 @@ $(document).ready(function () {
     $(document).on('click', '.load_more', function(){
         var targetContainer = $('.search__block, .blog__content-inner, .review__more, .services__blog'),          //  Контейнер, в котором хранятся элементы
             url =  $('.load_more').attr('data-url');    //  URL, из которого будем брать элементы
-            
+
         if (url !== undefined) {
             $.ajax({
                 type: 'GET',
                 url: url,
                 dataType: 'html',
                 success: function(data){
-                    
+
                     //  Удаляем старую навигацию
                     $('.search__block .pag, .blog__content-inner .pag, .review__more .pag, .services__blog .pag, .blogPage .blog__block .pag').remove();
                     var elements = $(data).find('.search__block .blog__item, .blog__content-inner .blog__item, .review__more .blog__item, .services__blog .blog__item'),  //  Ищем элементы
@@ -65,13 +67,13 @@ $(document).ready(function () {
                 slidesPerView: 1,
                 spaceBetween: 20
             },
-            768: {
+            900: {
                 slidesPerView: 2,
                 spaceBetween: 20
             }
         }
     });
-    
+
     $('.blog__more:not(.no__more), .more__services').on('click', function (e) {
         e.preventDefault();
         $('.load_more').click();
@@ -82,7 +84,7 @@ $(document).ready(function () {
     })
     $('body').on('click', '.more_otzivi', function (e) {
         e.preventDefault();
-        
+
         if($(this).text().length > 6) {
             $('.more_otzivi').text('Скрыть');
             $('.more_otzivi').addClass('no_more');
@@ -93,7 +95,7 @@ $(document).ready(function () {
             $('.more_otzivi').removeClass('no_more');
         }
     })
-    
+
     $('.more__filters').on('click', function (e) {
         e.preventDefault();
         $('.hide__filters').toggle();
@@ -121,7 +123,7 @@ $(document).ready(function () {
         $('.menu_top_wp ul li').removeClass('acitve');
         $(this).toggleClass('acitve');
     });
-    
+
     $('.phone').mask('0 (000) 000-00-00');
     // $('.detail__block_photos ul').slick({
     //     slidesToShow: 1,
@@ -214,12 +216,12 @@ $(document).ready(function () {
         } else {
             $(this).parents('.popup__container').find('input[name="consult_number"]').removeClass('error');
         }
-        /*if(isEmail(consult_email)) {
+        if(isEmail(consult_email)) {
             $(this).parents('.popup__container').find('input[name="consult_email"]').removeClass('error');
         } else {
             $(this).parents('.popup__container').find('input[name="consult_email"]').addClass('error');
             stop = 'stop';
-        }    */
+        }
         $(this).parents('.popup__container').find(".popup__container_footer").removeClass('error');
         if(stop == 'stop') return;
         $.ajax({
@@ -357,7 +359,7 @@ $(document).ready(function () {
             threshold: 20 // сработает через 20 пикселей
         }
          );
-    
+
     //map();
     // header
     $(window).scroll(function(){
@@ -371,7 +373,7 @@ $(document).ready(function () {
         $('.menu').toggleClass('show');
         $('body').toggleClass('hidden');
     });
-    
+
 
 })
 function home__slider_height() {

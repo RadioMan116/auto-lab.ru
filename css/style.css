@@ -700,7 +700,7 @@ h4{
 }
 
 .blog__text_big {
-    
+
     font-weight: 300;
     margin-top: 3px;
 }
@@ -2203,7 +2203,7 @@ body .faq_block li {
     height: 100%;
 }
 #socsety{
-    margin: 20px 30px;  
+    margin: 20px 30px;
     overflow: hidden;
     margin-right: 0;
 }
@@ -2324,7 +2324,7 @@ html, body {
 
 @media (max-width: 1490px) {
     .vk, .facebook, .instagramm{
-        width: 165px;  
+        width: 165px;
     }
     .instagramm{
         width: 250px;
@@ -2520,7 +2520,7 @@ html, body {
 
 }
 
-@media (min-width: 900px) and (max-width: 1000px) {
+@media (min-width: 901px) and (max-width: 1000px) {
     body .blog__item {
         width: 46% !important;
     }
@@ -2724,7 +2724,7 @@ html, body {
         margin-left: 2%!important;
         margin-right: 2%!important;
     }
-    
+
     .partnersPage .footer__content {
         display: none;
     }
@@ -3913,5 +3913,294 @@ html, body {
         text-align: left;
     }
 }
+/* New style */
+.reviewsPage .review__more {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.reviewsPage .review__more .blog__item.swiper-slide:not(:hover) {
+	border-bottom: 3px solid transparent;
+	border-left: 3px solid transparent;
+}
+
+.reviewsPage .review__more .blog__description_inner {
+	height: auto;
+}
+
+.reviewsPage .blog__item.swiper-slide {
+	min-height: unset;
+}
+
+.reviewsPage .blog__item.swiper-slide .blog__description {
+	min-height: unset !important;
+}
+
+.reviewsPage .blog__item.swiper-slide:hover .blog__description {
+	width: 100%;
+	margin-left: 0;
+	border-left: 0;
+}
+
+.reviewsPage .blog__item.swiper-slide .blog__description .blog__description_inner {
+	width: 100%;
+	margin-left: 0;
+	border-left: 0;
+}
+
+.reviewsPage .blog__item.swiper-slide:hover .clearfix {
+	margin-left: 0;
+}
+
+.reviewsPage .blog__item.swiper-slide:hover .blog__text {
+	margin-left: 0;
+}
+
+.reviewsPage .blog__item.swiper-slide:hover .blog__text_big {
+	margin-left: 0;
+}
+
+.blogDetail {
+	max-width: 1770px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.blogDetail .main__block {
+	padding-left: 23px;
+	padding-top: 23px;
+}
+
+.blogDetail .slider__social {
+	left: 33px;
+	top: 291px;
+}
+
+.blogDetail .menu_top {
+	top: 102px;
+	right: 45px;
+}
+
+.blogDetail .faq_btn {
+	top: calc(50vh - 4px);
+	right: 45px;
+}
+.blogDetail .main__block img {
+	height: auto;
+}
+.blogDetail .main__block p img {
+	margin: 24px 0;
+}
+
+.menu_calc_btn {
+	margin-bottom: 0;
+}
+
+.menu_top_wp ul.header__navbar-list>li:first-child {
+	padding-top: 50px;
+	padding-bottom: 26px;
+}
+
+.menu_top_wp ul.header__navbar-list>li:nth-child(2) {
+	padding-top: 0px;
+}
+
+.detailingPage .reviews__block .blog__item {
+	height: 100%;
+	margin: 0;
+}
+
+.detailingPage .reviews__block .blog__item:not(:hover) {
+	border-bottom: 3px solid transparent;
+	border-left: 3px solid transparent;
+}
+
+.detailingPage .reviews__block .blog__description_inner {
+	height: auto;
+}
+
+.detailingPage .blog__item.swiper-slide:hover .clearfix {
+	margin-left: 0;
+}
+
+.detailingPage .blog__item.swiper-slide:hover .clearfix .blog__title {
+	margin-left: 0;
+}
+
+.detailingPage .blog__item.swiper-slide:hover .blog__text {
+	margin-left: 0;
+}
+
+.detailingPage .blog__item.swiper-slide:hover .blog__text_big {
+	margin-left: 0;
+}
+
+.detailingPage .slider__top_full_left ul{
+	list-style-position: inside;
+}
+.detailingPage {
+	background: url('../img/ddetail.jpg') , url("../img/deteiling_2.jpg")!important;
+	background-repeat: no-repeat !important;
+	background-position: top center, center 900px  !important;
+}
+.detailingPage #site{
+	background-position: center calc(1060px - 10%);
+	background: none;
+}
+
+.preimushestva__title{
+	font-size: 25px;
+}
 
 
+.menu__top {
+	max-width: 1770px;
+
+	margin: 0 auto;
+}
+
+@media (max-width: 1350px) {
+	.reviewsPage .blog__item .blog__description {
+		max-height: unset;
+	}
+
+	.detailingPage .reviews__block .swiper-button-next {
+		right: -22px;
+	}
+
+	.detailingPage .reviews__block .swiper-button-prev {
+		left: -15px;
+	}
+}
+
+@media (max-width: 1299px) {
+	.blogDetail .slider__social {
+		left: 34px;
+		top: 291px;
+	}
+
+	.blogDetail .menu_top {
+		top: 102px;
+		right: 45px;
+	}
+
+	.blogDetail .faq_btn {
+		top: calc(50vh - 4px);
+		right: 45px;
+	}
+
+	.blogDetail .main__block {
+		padding-right: 45px;
+	}
+
+
+}
+
+@media (max-width: 1000px) {
+
+	.detailingPage .reviews__block .swiper-button-next,
+	.detailingPage .reviews__block .swiper-button-prev {
+		background-size: contain;
+		width: 15px;
+		height: 30px;
+	}
+
+	.detailingPage .reviews__block .swiper-button-prev {
+		left: -17px;
+	}
+}
+
+@media (max-width: 900px) {
+	.reviewsPage .blog__item.swiper-slide {
+		width: 98% !important;
+		border-left: 0 !important;
+		border-bottom: 0 !important;
+		min-height: unset;
+	}
+
+	.reviewsPage .blog__item.swiper-slide:hover {
+		border-left: 3px solid #d41820 !important;
+	}
+
+	.reviewsPage .blog__item.swiper-slide:hover .blog__description {
+		padding-left: 0 !important;
+	}
+
+	.reviewsPage .h1__detail_mobile {
+		padding-left: 15px;
+	}
+
+	.reviewsPage .blog__item .blog__description {
+		margin-bottom: 40px;
+	}
+
+	.blogDetail .menu_top {
+		top: 96px;
+		right: 32px;
+	}
+
+	.blogDetail .main__block {
+		padding-right: 0px;
+	}
+
+	.detailingPage .reviews__block .swiper-button-prev {}
+
+	.detailingPage .reviews__block .blog__item {
+		width: calc(50% - 10px) !important;
+	}
+
+	/* .detailingPage {
+		background: none !important;
+	} */
+
+	.detailingPage .doverie__block_buttons b {
+		text-align: center;
+		display: block;
+		font-size: 1.17em;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: bold;
+	}
+
+	.detailingPage .blog__item.swiper-slide:hover {
+		border-left: 3px solid #d41820 !important;
+		height: auto;
+	}
+
+	.detailingPage .blog__item.swiper-slide:hover .blog__description {
+		padding-left: 0 !important;
+	}
+	.detailingPage .blog__item.swiper-slide {
+		border-left: 0 !important;
+		border-bottom: 0 !important;
+		min-height: unset;
+		margin-bottom: 0 !important;
+	}
+	.detailingPage .blog__item .blog__description {
+		margin-bottom: 16px;
+	}
+
+	/* .detailingPage {
+		background: url('../img/ddetail.jpg') , url("../img/deteiling_2.jpg")!important;
+		background-repeat: no-repeat !important;
+		background-position: top center, center 900px  !important;
+	} */
+	.detailingPage #site{
+
+		background: none;
+	}
+	.detailingPage .slider__home_item .container{
+		background: none ;
+		background-color: rgba(255, 255, 255, 0.75);
+	}
+
+
+}
+
+@media (max-width: 530px) {
+	.detailingPage .reviews__block .blog__item {
+		width: 100% !important;
+	}
+}
